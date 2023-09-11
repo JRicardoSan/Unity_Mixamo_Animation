@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: 0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
@@ -34,7 +34,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: -0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
@@ -59,16 +59,16 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: -0.0001
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: 0.0001
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: -0.0001
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: 0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3688283206590969136}
@@ -93,7 +93,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Downward_Slash
+    m_ConditionEvent: Attack_Downward_Slash
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2831337235539827284}
@@ -118,7 +118,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: -0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
@@ -143,7 +143,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: -0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
@@ -168,7 +168,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: 0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
@@ -193,16 +193,16 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: -0.0001
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: 0.0001
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: -0.0001
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: 0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3688283206590969136}
@@ -227,30 +227,30 @@ AnimatorController:
   m_Name: Great_Sword_Controller
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: vel_fbw
+  - m_Name: Move_Vel_Fbw
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: vel_lat
+    m_Controller: {fileID: 9100000}
+  - m_Name: Move_Vel_Lat
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: Downward_Slash
+    m_Controller: {fileID: 9100000}
+  - m_Name: Attack_Downward_Slash
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: Low_Slash
+    m_Controller: {fileID: 9100000}
+  - m_Name: Attack_Low_Slash
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -273,7 +273,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: -0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
@@ -298,7 +298,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: -0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
@@ -323,16 +323,16 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: -0.0001
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: 0.0001
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: -0.0001
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: 0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3688283206590969136}
@@ -357,7 +357,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: 0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
@@ -486,13 +486,13 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: vel_fbw
     m_Mirror: 0
-  m_BlendParameter: vel_lat
-  m_BlendParameterY: vel_fbw
+  m_BlendParameter: Move_Vel_Lat
+  m_BlendParameterY: Move_Vel_Fbw
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
-  m_BlendType: 2
+  m_BlendType: 3
 --- !u!1102 &2831337235539827284
 AnimatorState:
   serializedVersion: 6
@@ -591,7 +591,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Low_Slash
+    m_ConditionEvent: Attack_Low_Slash
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2992143062035389115}
@@ -646,7 +646,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: 0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
@@ -671,7 +671,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: -0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
@@ -696,7 +696,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_lat
+    m_ConditionEvent: Move_Vel_Lat
     m_EventTreshold: 0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
@@ -721,7 +721,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vel_fbw
+    m_ConditionEvent: Move_Vel_Fbw
     m_EventTreshold: 0.0001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3101436450563169792}
