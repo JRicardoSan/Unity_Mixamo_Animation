@@ -30,12 +30,13 @@ public class greatSwordMariaInputController : MonoBehaviour
     void Update()
     {
 
-        bool forwardPressed  =   Input.GetKey("w");
-        bool backwardPressed =   Input.GetKey("s");
-        bool leftPressed     =   Input.GetKey("a");
-        bool rightPressed    =   Input.GetKey("d");
-        bool runPressed      =   Input.GetKey("left shift");
-        bool mousePressed    =   Input.GetKey(KeyCode.Mouse0);
+        bool forwardPressed         =   Input.GetKey("w");
+        bool backwardPressed        =   Input.GetKey("s");
+        bool leftPressed            =   Input.GetKey("a");
+        bool rightPressed           =   Input.GetKey("d");
+        bool runPressed             =   Input.GetKey("left shift");
+        bool leftMousePressed       =   Input.GetKey(KeyCode.Mouse0);
+        bool rightMousePressed      =   Input.GetKey(KeyCode.Mouse1);
 
 
         // First, we reset any trigger to avoid it being still activated
@@ -70,9 +71,14 @@ public class greatSwordMariaInputController : MonoBehaviour
             input_vel_lat = Decelerate( input_vel_lat );
         }
         
-        if (mousePressed)
+        if (leftMousePressed)
         {
             dummySC.AnimateAttackDownwardSlash();
+        }
+
+        if (rightMousePressed)
+        {
+            dummySC.AnimateAttackLowSlash();
         }
         
 

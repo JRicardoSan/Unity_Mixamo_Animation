@@ -60,10 +60,19 @@ namespace Animation
             
         }
 
+        public void AnimateAttackLowSlash()
+        {
+
+            animator.ResetTrigger( attackLowSlashHash );
+            animator.SetTrigger(   attackLowSlashHash );
+            
+        }
+
         public void ResetTriggers()
         {
 
             animator.ResetTrigger( attackDownwardSlashHash );
+            animator.ResetTrigger( attackLowSlashHash );
 
         }
         
