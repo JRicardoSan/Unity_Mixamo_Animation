@@ -30,52 +30,60 @@ public class greatSwordMariaInputController : MonoBehaviour
     void Update()
     {
 
-        bool forwardPressed =   Input.GetKey("w");
-        bool backwardPressed =  Input.GetKey("s");
-        bool leftPressed    =   Input.GetKey("a");
-        bool rightPressed   =   Input.GetKey("d");
-        bool runPressed     =   Input.GetKey("left shift");
+        bool forwardPressed  =   Input.GetKey("w");
+        bool backwardPressed =   Input.GetKey("s");
+        bool leftPressed     =   Input.GetKey("a");
+        bool rightPressed    =   Input.GetKey("d");
+        bool runPressed      =   Input.GetKey("left shift");
+        bool mousePressed    =   Input.GetKey(KeyCode.Mouse0);
+
+
+        // First, we reset any trigger to avoid it being still activated
+        dummySC.ResetTriggers();
 
         // Forward Key is pressed
         if (forwardPressed)
         {
-            input_vel_fbw = UpdateVelocity( forwardPressed, runPressed, input_vel_fbw );
+            input_vel_fbw = Accelerate( runPressed, input_vel_fbw );
         }
         else if (backwardPressed)
         {
-            input_vel_fbw = -UpdateVelocity( backwardPressed, runPressed, -input_vel_fbw );
+            input_vel_fbw = -Accelerate( runPressed, -input_vel_fbw );
         }
         else
         {
-            input_vel_fbw = UpdateVelocity( forwardPressed, runPressed, input_vel_fbw );
+            input_vel_fbw = Decelerate( input_vel_fbw );
         }
         
 
         // Right Key is pressed
         if ( rightPressed )
         {
-            input_vel_lat = UpdateVelocity( rightPressed, runPressed, input_vel_lat );
+            input_vel_lat = Accelerate( runPressed, input_vel_lat );
         }
         else if (leftPressed)
         {
-            input_vel_lat = -UpdateVelocity( leftPressed, runPressed, -input_vel_lat );
+            input_vel_lat = -Accelerate( runPressed, -input_vel_lat );
         }
         else
         {
-            input_vel_lat = UpdateVelocity( rightPressed, runPressed, input_vel_lat );
+            input_vel_lat = Decelerate( input_vel_lat );
         }
         
+        if (mousePressed)
+        {
+            dummySC.AnimateAttackDownwardSlash();
+        }
         
 
         dummySC.AnimateMotion( input_vel_fbw, input_vel_lat );
+        
 
     }
 
-    float UpdateVelocity( bool isPressed, bool isRunPressed, float inputVelocity )
+    float Accelerate( bool isRunPressed, float inputVelocity )
     {
         float outputVelocity = inputVelocity;
-        if ( isPressed )
-        {
 
             if ( isRunPressed )
             {
@@ -110,23 +118,33 @@ public class greatSwordMariaInputController : MonoBehaviour
                 }
 
             }
+        return outputVelocity;
             
-        }
-        else
+    }
+
+    float Decelerate( float inputVelocity )
+    {
+
+        float outputVelocity = inputVelocity;
+
+        if ( outputVelocity > 0.0f )
         {
 
-            if ( outputVelocity > 0.0f)
-            {
-                outputVelocity -= Time.deltaTime * deceleration;
-            }
-            else
-            {
-                outputVelocity = 0.0f;
-            }
+            outputVelocity -= Time.deltaTime * deceleration;
+            outputVelocity = outputVelocity = Mathf.Max( outputVelocity, 0.0f );
+
+        }
+        else if ( outputVelocity < 0.0f )
+        {
+
+            outputVelocity += Time.deltaTime * deceleration;
+            outputVelocity = outputVelocity = Mathf.Min( outputVelocity, 0.0f );
 
         }
 
         return outputVelocity;
+
     }
+        
 
 }

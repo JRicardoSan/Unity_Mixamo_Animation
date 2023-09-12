@@ -59,6 +59,13 @@ namespace Animation
             animator.SetTrigger(   attackDownwardSlashHash );
             
         }
+
+        public void ResetTriggers()
+        {
+
+            animator.ResetTrigger( attackDownwardSlashHash );
+
+        }
         
     }
 
