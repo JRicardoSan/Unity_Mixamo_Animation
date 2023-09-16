@@ -11,4 +11,4 @@ A Blend Tree is used to make the movements (walk, run) animations and interpolat
 
 ### Maria with Great Sword
 
-![Demo of Maria Animation System](Media\GreatSword_Maria.gif)
+![Demo of Maria Animation System](Media/GreatSword_Maria.gif)
